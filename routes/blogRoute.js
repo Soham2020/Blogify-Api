@@ -3,6 +3,16 @@ const router = express.Router();
 const Blogs = require('../models/blogModel');
 const auth = require('../middleware/auth');
 
+// Get all the blogs
+router.get('/getAll', async (req, res) => {
+    try {
+        const blogs = await Blogs.find();
+        res.json(blogs);
+    }catch (err) {
+        return res.status(500).json({msg: err.message});
+    }
+})
+
 // Get Blogs
 router.get('/getBlogs', auth, async (req, res) => {
     try {
