@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 dotenv.config({ path: './config.env' })
 
 const userRoute = require('./routes/userRoute');
+const blogRoute = require('./routes/blogRoute');
 
 const DB = process.env.DATABASE;
 mongoose.connect(DB, {
@@ -25,6 +26,7 @@ server.get("/", (req, res) => {
 });
 
 server.use('/users', userRoute)
+server.use('/blogs', blogRoute)
 
 // PORT Connected
 const PORT = process.env.PORT;
