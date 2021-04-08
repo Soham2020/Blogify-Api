@@ -29,7 +29,7 @@ server.use('/users', userRoute)
 server.use('/blogs', blogRoute)
 
 // PORT Connected
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server runnning at port ${PORT}`);
 });
