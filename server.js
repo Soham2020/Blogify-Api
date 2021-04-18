@@ -2,6 +2,7 @@ const express = require("express");
 const server = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cors = require('cors');
 dotenv.config({ path: './config.env' })
 
 const userRoute = require('./routes/userRoute');
@@ -20,9 +21,10 @@ mongoose.connect(DB, {
 })
 
 server.use(express.json());
+server.use(cors());
 
 server.get("/", (req, res) => {
-  res.send("Blog App!!");
+    res.send("<h1>Blogify Server is Up & Running!</h1>");
 });
 
 server.use('/users', userRoute)
