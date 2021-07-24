@@ -26,16 +26,11 @@ router.get('/getBlogs', auth, async (req, res) => {
 // Create new Blogs
 router.post('/createBlogs', auth, async (req, res) => {
     try {
+        req.body.img = req.file.path;
         const { title, author, category, img, content, date } = req.body;
         const newBlog = new Blogs({
-            title,
-            author,
-            category,
-            img,
-            content,
-            date,
-            user_id: req.user.id
-        })
+            title, author, category, img, content, date, user_id: req.user.id
+        });
         await newBlog.save();
         res.json("Blog Created!!");
     }catch (err) {
