@@ -24,12 +24,12 @@ server.use(express.json());
 server.use(cors());
 
 server.get("/", (req, res) => {
-    res.send("<h1>Blogify Server is Up & Running!</h1>");
+    res.send("<h1>BlogifyAPI Server is Up & Running!</h1>");
 });
 
 server.use('/users', userRoute)
 server.use('/blogs', blogRoute)
-console.log("New-Changes")
+
 // PORT Connected
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
