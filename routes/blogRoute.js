@@ -26,8 +26,8 @@ router.get('/getBlogs', auth, async (req, res) => {
 // Create new Blogs
 router.post('/createBlogs', auth, async (req, res) => {
     try {
-        const { title, author, category, img, content, date } = req.body;
         console.log(req.body);
+        const { title, author, category, img, content, date } = req.body;
         const newBlog = new Blogs({
             title, author, category, img, content, date, user_id: req.user.id
         });
