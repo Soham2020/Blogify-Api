@@ -41,3 +41,6 @@
 
 ## LICENSE
 This repository is under <a href="https://opensource.org/licenses/MIT">MIT LICENSE</a>.
+
+## CONCLUSION
+A 🌟 will keep us motivated to do such more things.
